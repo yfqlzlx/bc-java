@@ -250,10 +250,8 @@ public class Zuc128CoreEngine
         buf[off + 3] = (byte)val;
     }
 
-    /* ����������������������- */
 
     /**
-     * Modular add c = a + b mod (2^31 � 1).
      *
      * @param a value A
      * @param b value B

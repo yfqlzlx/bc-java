@@ -62,7 +62,6 @@ import org.bouncycastle.asn1.x509.GeneralName;
  * namingAuthorityUrl, or by a combination of them. For example, the text string
  * can contain the name of the authority, the country and the name of the title
  * register. The URL-option refers to a web page which contains lists with
- * �officially� registered professions (text and possibly OID) as well as
  * further information on these professions. Object identifiers for the
  * component namingAuthorityId are grouped under the OID-branch
  * id-isis-at-namingAuthorities and must be applied for.

@@ -20,7 +20,6 @@ import org.bouncycastle.util.Arrays;
  * <p>
  * ISIS-MTT-SigG: The signature act allows publishing certificates only then,
  * when the certificate owner gives his explicit permission. Accordingly, there
- * may be �nondownloadable� certificates, about which the responder must provide
  * status information, but MUST NOT include them in the response. Clients may
  * get therefore the following three kind of answers on a single request
  * including the RetrieveIfAllowed extension:

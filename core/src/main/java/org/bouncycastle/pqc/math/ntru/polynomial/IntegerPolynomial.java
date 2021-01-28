@@ -382,7 +382,6 @@ public class IntegerPolynomial
         IntegerPolynomial f = new IntegerPolynomial(N + 1);
         f.coeffs = Arrays.copyOf(coeffs, N + 1);
         f.modPositive(2);
-        // set g(x) = x^N − 1
         IntegerPolynomial g = new IntegerPolynomial(N + 1);
         g.coeffs[0] = 1;
         g.coeffs[N] = 1;
@@ -500,7 +499,6 @@ public class IntegerPolynomial
         IntegerPolynomial f = new IntegerPolynomial(N + 1);
         f.coeffs = Arrays.copyOf(coeffs, N + 1);
         f.modPositive(3);
-        // set g(x) = x^N − 1
         IntegerPolynomial g = new IntegerPolynomial(N + 1);
         g.coeffs[0] = -1;
         g.coeffs[N] = 1;

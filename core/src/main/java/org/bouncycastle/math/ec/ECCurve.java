@@ -77,7 +77,6 @@ public abstract class ECCurve
                 throw new IllegalStateException("implementation returned current curve");
             }
 
-            // NOTE: Synchronization added to keep FindBugs™ happy
             synchronized (c)
             {
                 c.coord = coord;

@@ -18,7 +18,6 @@ import org.bouncycastle.util.BigIntegers;
  * <pre>
  * EB = 06 || PS || 0xBA || H || TRAILER
  * </pre>
- * where PS is a string of bytes all of value 0xBB of length such that |EB|=|n|, and TRAILER is the ISO/IEC 10118 part number† for the digest. The byte string, EB, is converted to an integer value, the message representative, f.
  */
 public class X931Signer
     implements Signer

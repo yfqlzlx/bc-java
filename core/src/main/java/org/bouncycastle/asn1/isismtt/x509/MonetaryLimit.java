@@ -32,7 +32,6 @@ import org.bouncycastle.asn1.DERSequence;
  * <p>
  * currency must be the ISO code.
  * <p>
- * value = amount�10*exponent
  */
 public class MonetaryLimit
     extends ASN1Object
@@ -72,7 +71,6 @@ public class MonetaryLimit
     /**
      * Constructor from a given details.
      * <p>
-     * value = amount�10^exponent
      *
      * @param currency The currency. Must be the ISO code.
      * @param amount   The amount

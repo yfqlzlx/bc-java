@@ -247,12 +247,10 @@ public class DSAParametersGenerator
 // 5. Get an arbitrary sequence of seedlen bits as the domain_parameter_seed.
             random.nextBytes(seed);
 
-// 6. U = Hash (domain_parameter_seed) mod 2^(N–1).
             hash(d, seed, output, 0);
 
             BigInteger U = new BigInteger(1, output).mod(ONE.shiftLeft(N - 1));
 
-// 7. q = 2^(N–1) + U + 1 – ( U mod 2).
             BigInteger q = U.setBit(0).setBit(N - 1);
 
 // 8. Test whether or not q is prime as specified in Appendix C.3.
@@ -266,13 +264,10 @@ public class DSAParametersGenerator
             // Note: 'offset' value managed incrementally
             byte[] offset = Arrays.clone(seed);
 
-// 11. For counter = 0 to (4L – 1) do
             int counterLimit = 4 * L;
             for (int counter = 0; counter < counterLimit; ++counter)
             {
 // 11.1 For j = 0 to n do
-//      Vj = Hash ((domain_parameter_seed + offset + j) mod 2^seedlen).
-// 11.2 W = V0 + (V1 ∗ 2^outlen) + ... + (V^(n–1) ∗ 2^((n–1) ∗ outlen)) + ((Vn mod 2^b) ∗ 2^(n ∗ outlen)).
                 {
                     for (int j = 1; j <= n; ++j)
                     {
@@ -285,7 +280,6 @@ public class DSAParametersGenerator
                     hash(d, offset, output, 0);
                     System.arraycopy(output, output.length - remaining, w, 0, remaining);
 
-// 11.3 X = W + 2^(L–1). Comment: 0 ≤ W < 2^(L–1); hence, 2^(L–1) ≤ X < 2^L.
                     w[0] |= (byte)0x80;
                 }
 
@@ -294,10 +288,8 @@ public class DSAParametersGenerator
 // 11.4 c = X mod 2q.
                 BigInteger c = X.mod(q.shiftLeft(1));
 
-// 11.5 p = X - (c - 1). Comment: p ≡ 1 (mod 2q).
                 BigInteger p = X.subtract(c.subtract(ONE));
 
-// 11.6 If (p < 2^(L-1)), then go to step 11.9
                 if (p.bitLength() != L)
                 {
                     continue;

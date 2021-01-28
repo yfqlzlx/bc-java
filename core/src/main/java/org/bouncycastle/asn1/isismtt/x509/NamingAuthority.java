@@ -37,7 +37,6 @@ public class NamingAuthority
     /**
      * Profession OIDs should always be defined under the OID branch of the
      * responsible naming authority. At the time of this writing, the work group
-     * �Recht, Wirtschaft, Steuern� (�Law, Economy, Taxes�) is registered as the
      * first naming authority under the OID id-isismtt-at-namingAuthorities.
      */
     public static final ASN1ObjectIdentifier id_isismtt_at_namingAuthorities_RechtWirtschaftSteuern =
